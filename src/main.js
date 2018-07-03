@@ -1,11 +1,25 @@
-let lx = '2131231';
+import Vue from 'vue';
 
-const fsadfas = '4324324';
+/*styles*/
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'mint-ui/lib/style.min.css';
+import './styles/globalStyles.less';
+
+/*scripts*/
+import '../plugins/indigo';
+
+/*components*/
+import app from './app.vue';
+
+/*test*/
+// import test1 from './test/test1.vue';
+
+/*Entry*/
+new Vue({
+  render:(core)=>core(app)
+}).$mount('#app');
 
 
-console.log(1231)
 
 
-import test1 from './test1.js'
-console.log(test1)
 
