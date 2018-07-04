@@ -25,6 +25,7 @@
     "webpack-dev-server": "^3.1.4"
   },
   "dependencies": {
+    "better-scroll": "^1.12.4",
     "bootstrap": "^4.1.1",
     "jquery": "^3.3.1",
     "mint-ui": "^2.2.13",

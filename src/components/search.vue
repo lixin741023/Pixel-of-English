@@ -2,7 +2,8 @@
     <div class="search">
         <img class="searchIcon" src="../images/search.png" alt="search_button">
         <input class="searchInput" type="text">
-        <ul>
+        <ul class="tst">
+            <div>
             <li>advance</li>
             <li>adventure</li>
             <li>advanceer</li>
@@ -15,28 +16,35 @@
             <li>adventure</li>
             <li>advanceer</li>
             <li>typo</li>
+            </div>
         </ul>
     </div>
 </template>
 
 <script>
-  export default {
-    name:'search'
-  };
+    import BSscroll from 'better-scroll';
+
+    export default {
+        name: 'search',
+        mounted:()=>{
+            new BSscroll(document.querySelector('.tst'))
+        }
+    };
 </script>
 
 <style scoped lang="less">
     @import url('../styles/customStyles.less');
-    .search{
+
+    .search {
         width: 2.5rem;
         position: relative;
         display: flex;
         align-items: center;
-        .searchIcon{
+        .searchIcon {
             width: 0.25rem;
             height: 0.25rem;
         }
-        .searchInput{
+        .searchInput {
             width: 2rem;
             height: 0.26rem;
             background-color: transparent;
@@ -48,7 +56,7 @@
             font-weight: bold;
             text-align: center;
         }
-        ul{
+        ul {
             position: absolute;
             background-color: @standard_bgColor;
             width: 2rem;
@@ -61,11 +69,11 @@
             padding-left: 0.05rem;
             padding-right: 0.05rem;
             padding-bottom: 0.05rem;
-            li{
-                padding:5px 5px 4px 5px;
+            li {
+                padding: 5px 5px 4px 5px;
                 overflow-y: auto;
                 border-bottom: 0.01rem solid @standard_color;
-                &:last-child{
+                &:last-child {
                     border: 0;
                 }
             }
