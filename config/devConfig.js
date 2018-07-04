@@ -23,7 +23,15 @@ const devConfig={
       {test:/\.less/,loader:['style-loader','css-loader','less-loader']},
       {test:/.(png|jpg|git)$/,loader:'file-loader',options:{
           outputPath :'images/'
-        }}
+        }},
+      /*********Expose Something************/
+      {
+        test:require.resolve('jquery'),
+        use:[{
+          loader:'expose-loader',
+          options:'$'
+        }]
+      }
     ]
   },
   plugins:[

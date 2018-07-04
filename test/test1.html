@@ -3,17 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        p{
+            border: 1px solid red;}
+    </style>
 </head>
 <body>
 
-    <div class="lx" hei="a">11</div>
-    <div class="lx" hei="b">22</div>
-    <div class="lx" hei="c">33</div>
-    <div class="lx" hei="d">44</div>
+    <div class="box" style="width: 100%; height: 700px; border: 1px solid red;"></div>
 
-<script src="../node_modules/jquery/dist/jquery.js"></script>
+    <p class="p1">111111111111111111111</p>
+    <p class="p2">222222222222222222222</p>
+    <p class="p3">333333333333333333333</p>
+
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/vue/dist/vue.js"></script>
+    <script src="../node_modules/better-scroll/dist/bscroll.js"></script>
+    <script src="../node_modules/islider.js/build/index.bundle.js"></script>
+    <!--<script src="../node_modules/islider.js/build/iSlider.min.js"></script>-->
+    <!--<script src="../node_modules/islider.js/build/iSlider.animate.js"></script>-->
     <script>
-        console.log($('.lx').eq(2).attr('hei'))
+        let data=[
+          {content:'../src/images/1.png'},
+          {content:'../src/images/2.png'},
+          {content:'../src/images/3.png'}
+        ]
+        let el=[
+          {content:document.querySelector('.p1')},
+          {content:document.querySelector('.p2')},
+          {content:document.querySelector('.p3')}
+        ]
+
+        new iSlider(document.querySelector('.box'), el, {
+          isLooping: 1,
+          isOverspread: 1,
+          isAutoplay: 1,
+          animateTime: 800,
+          animateType: 'flow'
+        });
+
     </script>
 </body>
 </html>

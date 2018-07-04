@@ -6,7 +6,10 @@ import 'mint-ui/lib/style.min.css';
 import './styles/globalStyles.less';
 
 /*scripts*/
-import '../plugins/indigo';
+import '../plugins/indigo.js';
+import 'jquery';        /*expose*/
+
+
 
 /*components*/
 import app from './app.vue';
