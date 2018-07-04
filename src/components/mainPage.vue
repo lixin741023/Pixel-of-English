@@ -1,19 +1,22 @@
 <template>
     <div class="mainPage">
         <search></search>
-        <nick-name style="display: none;"></nick-name>
+        <nick-name></nick-name>
+        <slider-area></slider-area>
     </div>
 </template>
 
 <script>
   import search from './search.vue';
   import nickName from './nickName.vue';
+  import sliderArea from './sliderArea.vue';
 
   export default {
     name:'mainPage',
     components:{
       search,
-      nickName
+      nickName,
+      sliderArea
     }
   };
 </script>

@@ -2,34 +2,46 @@
     <div class="search">
         <img class="searchIcon" src="../images/search.png" alt="search_button">
         <input class="searchInput" type="text">
-        <ul>
-            <li>advance</li>
-            <li>adventure</li>
-            <li>advanceer</li>
-            <li>typo</li>
-            <li>advance</li>
-            <li>adventure</li>
-            <li>advanceer</li>
-            <li>typo</li>
-            <li>advance</li>
-            <li>adventure</li>
-            <li>advanceer</li>
-            <li>typo</li>
+        <ul class="wrpper">
+            <div class="content">
+                <li>advance</li>
+                <li>adventure</li>
+                <li>advanceer</li>
+                <li>typo</li>
+                <li>advance</li>
+                <li>adventure</li>
+                <li>advanceer</li>
+                <li>typo</li>
+                <li>advance</li>
+                <li>adventure</li>
+                <li>advanceer</li>
+                <li>typo</li>
+            </div>
         </ul>
+
     </div>
 </template>
 
 <script>
+    import BScroll from 'better-scroll';
   export default {
-    name:'search'
+    name:'search',
+    data:()=>({
+    }),
+    mounted(){
+      new BScroll('.wrpper')
+
+    }
   };
 </script>
 
 <style scoped lang="less">
     @import url('../styles/customStyles.less');
     .search{
+        position: absolute;
+        left: 0.02rem;
+        top: 0.02rem;
         width: 2.5rem;
-        position: relative;
         display: flex;
         align-items: center;
         .searchIcon{
@@ -49,10 +61,11 @@
             text-align: center;
         }
         ul{
+            display: none;
             position: absolute;
             background-color: @standard_bgColor;
             width: 2rem;
-            max-height: 2rem;
+            max-height: 2.1rem;
             overflow-y: auto;
             border: 0.015rem dashed @standard_color;
             top: 0.3rem;
@@ -66,7 +79,6 @@
                 overflow-y: auto;
                 border-bottom: 0.01rem solid @standard_color;
                 &:last-child{
-                    border: 0;
                 }
             }
         }
