@@ -16,11 +16,12 @@
 </script>
 
 <style scoped lang="less">
+    @import url('styles/customStyles.less');
     .app {
         position: absolute;
         width: 100%;
         min-width: 360px;
         height: 100%;
-        background-color: bisque;
+        background-color: @app_ThemeColor;
     }
 </style>
