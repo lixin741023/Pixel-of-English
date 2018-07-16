@@ -18,7 +18,6 @@
                 <li>typo</li>
             </div>
         </ul>
-
     </div>
 </template>
 
@@ -44,11 +43,11 @@
         width: 2.5rem;
         display: flex;
         align-items: center;
-        .searchIcon{
+        .searchIcon {
             width: 0.25rem;
             height: 0.25rem;
         }
-        .searchInput{
+        .searchInput {
             width: 2rem;
             height: 0.26rem;
             background-color: transparent;
@@ -74,8 +73,8 @@
             padding-left: 0.05rem;
             padding-right: 0.05rem;
             padding-bottom: 0.05rem;
-            li{
-                padding:5px 5px 4px 5px;
+            li {
+                padding: 5px 5px 4px 5px;
                 overflow-y: auto;
                 border-bottom: 0.01rem solid @standard_color;
                 &:last-child{
@@ -83,5 +82,4 @@
             }
         }
     }
-
 </style>

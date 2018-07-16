@@ -1,44 +1,47 @@
-const path=require('path');
-const VueLoaderPlugin=require('vue-loader/lib/plugin.js');
-const webpack=require('webpack');
+const path = require('path');
+const VueLoaderPlugin = require('vue-loader/lib/plugin.js');
+const webpack = require('webpack');
 
 console.log('---------------------------------------------------------------------------------------------------------------------------------------------->');
-const devConfig={
-  mode:'development',
-  entry:path.resolve(__dirname,'../src/main.js'),
-  output:{
-    path:path.resolve(__dirname,'../dist'),
-    filename:'[name].bundle.js',
-    publicPath:'dist/'
-  },
-  devServer:{
-    contentBase:'./',
-    port:6001,
-    hot:true
-  },
-  module:{
-    rules:[
-      {test:/\.vue$/,loader:'vue-loader'},
-      {test:/\.css$/,loader:['style-loader','css-loader']},
-      {test:/\.less/,loader:['style-loader','css-loader','less-loader']},
-      {test:/.(png|jpg|git)$/,loader:'file-loader',options:{
-          outputPath :'images/'
-        }},
-      /*********Expose Something************/
-      {
-        test:require.resolve('jquery'),
-        use:[{
-          loader:'expose-loader',
-          options:'$'
-        }]
-      }
+const devConfig = {
+    mode: 'development',
+    entry: path.resolve(__dirname, '../src/main.js'),
+    output: {
+        path: path.resolve(__dirname, '../dist'),
+        filename: '[name].bundle.js',
+        publicPath: 'dist/'
+    },
+    devServer: {
+        contentBase: './',
+        port: 6001,
+        hot: true
+    },
+    module: {
+        rules: [
+            {test: /\.vue$/, loader: 'vue-loader'},
+            {test: /\.css$/, loader: ['style-loader', 'css-loader']},
+            {test: /\.less/, loader: ['style-loader', 'css-loader', 'less-loader']},
+            {
+                test: /\.(png|jpg|git)$/, loader: 'file-loader', options: {
+                    outputPath: 'images/'
+                }
+            },
+            { test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "file-loader" },/**/
+            /*********Expose Something************/
+            {
+                test: require.resolve('jquery'),
+                use: [{
+                    loader: 'expose-loader',
+                    options: '$'
+                }]
+            }
+        ]
+    },
+    plugins: [
+        new VueLoaderPlugin(),
+        new webpack.HotModuleReplacementPlugin()
     ]
-  },
-  plugins:[
-    new VueLoaderPlugin(),
-    new webpack.HotModuleReplacementPlugin()
-  ]
 };
 
-module.exports=devConfig;
+module.exports = devConfig;
 
