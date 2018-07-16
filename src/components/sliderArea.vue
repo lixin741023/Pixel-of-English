@@ -60,6 +60,7 @@
         background-color: rgba(220,20,60,0.1);
         .item{
             margin: 0 auto;
+            padding: 0.5rem;
             width: 3.5rem;
             height: 3.5rem;
             border: 0.01rem solid @standard_color;
