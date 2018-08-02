@@ -1,8 +1,11 @@
 <template>
     <div class="search">
         <img class="searchIcon" src="../images/search.png" alt="search_button">
-        <input class="searchInput" type="text">
-        <ul class="wrpper">
+        <input class="searchInput" type="text" v-bind="willTranslate">
+        <ul>
+            <li>{{willTranslate}}</li>
+        </ul>
+        <ul class="wrpper" style="display: none;">
             <div class="content">
                 <li>advance</li>
                 <li>adventure</li>
@@ -26,9 +29,10 @@
   export default {
     name:'search',
     data:()=>({
+      willTranslate:''
     }),
     mounted(){
-      new BScroll('.wrpper')
+      // new BScroll('.wrpper')
 
     }
   };
@@ -60,7 +64,7 @@
             text-align: center;
         }
         ul{
-            display: none;
+            /*display: none;*/
             position: absolute;
             background-color: @standard_bgColor;
             width: 2rem;

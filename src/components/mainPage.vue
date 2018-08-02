@@ -1,9 +1,9 @@
 <template>
     <div class="mainPage">
         <search></search>
-        <nick-name></nick-name>
-        <slider-area></slider-area>
-        <view-option></view-option>
+        <nick-name class="hidden"></nick-name>
+        <slider-area class="hidden"></slider-area>
+        <view-option class="hidden"></view-option>
         <view-information></view-information>
     </div>
 </template>
@@ -32,7 +32,8 @@
         position: absolute;
         width: 100%;
         height: 100%;
-
+        .hidden{
+        }
     }
 
 </style>

@@ -3,6 +3,7 @@
         <li @click="changeView($event)" class="activeOption">标准</li>
         <li @click="changeView($event)">联想</li>
         <li @click="changeView($event)">我的收藏</li>
+        <li @click="changeView($event)">翻译词汇</li>
     </div>
 </template>
 
@@ -36,7 +37,7 @@
     .viewOption{
         display: flex;
         justify-content: space-around;
-        margin-top: 0.1rem;
+        margin-top: 0.25rem;
         padding: 0 0.02rem;
         li{
             display: flex;
